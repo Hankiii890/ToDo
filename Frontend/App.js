@@ -45,13 +45,16 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter task"
-        value={task}
-        onChangeText={setTask}
-      />
-      <Button title="Add Task" onPress={handleAddTask} />
+      <Text style={styles.title}>To Do List</Text>
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter task"
+          value={task}
+          onChangeText={setTask}
+        />
+        <Button title="Add Task" onPress={handleAddTask} />
+      </View>
       <FlatList
         data={tasks}
         renderItem={({ item }) => (
@@ -82,11 +85,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 20,
   },
+  title: {
+    fontSize: 24,
+    marginBottom: 10,
+  },
+  inputContainer: {
+    marginBottom: 20,
+  },
   input: {
     height: 40,
     borderColor: 'gray',
-    borderWidth: 1,
-    marginBottom: 20,
+    borderWidth: 2,
+    marginBottom: 10,
     paddingHorizontal: 10,
   },
   taskContainer: {
@@ -129,7 +139,7 @@ const styles = StyleSheet.create({
   delete: {
     width: 12,
     height: 12,
-    borderRadius: 6,
+    borderRadius: 12,
     backgroundColor: 'gray',
   },
   deleteAllContainer: {
